@@ -1,0 +1,335 @@
+2026-06-08 21:35:39,567 | INFO | ================================================================================
+2026-06-08 21:35:39,568 | INFO | EcoCast Week 3 ETL Pipeline started.
+2026-06-08 21:35:39,568 | INFO | Start time UTC: 2026-06-09 01:35:39.567777+00:00
+2026-06-08 21:35:39,568 | INFO | Base directory: /Users/olalekanogunsola/ecocast_project
+2026-06-08 21:35:39,568 | INFO | ================================================================================
+2026-06-08 21:35:39,568 | INFO | Extracting forecast for Louisville. Attempt 1 of 3.
+2026-06-08 21:35:40,168 | INFO | Successfully extracted forecast for Louisville.
+2026-06-08 21:35:40,174 | INFO | Extracting forecast for Lexington. Attempt 1 of 3.
+2026-06-08 21:35:40,718 | INFO | Successfully extracted forecast for Lexington.
+2026-06-08 21:35:40,722 | INFO | Extracting forecast for Indianapolis. Attempt 1 of 3.
+2026-06-08 21:35:41,267 | INFO | Successfully extracted forecast for Indianapolis.
+2026-06-08 21:35:41,276 | INFO | Transformed locations table with 3 rows.
+2026-06-08 21:35:41,295 | INFO | Dropped 0 rows with missing required forecast values.
+2026-06-08 21:35:41,298 | INFO | Dropped 0 rows outside valid weather ranges.
+2026-06-08 21:35:41,300 | INFO | Removed 0 duplicate forecast rows.
+2026-06-08 21:35:41,303 | INFO | Transformed weather_forecasts table with 504 rows.
+2026-06-08 21:35:41,324 | INFO | Created renewable_scores table with 504 rows.
+2026-06-08 21:35:41,340 | INFO | Created analytics-ready dataset with 504 rows.
+2026-06-08 21:35:41,357 | INFO | Created daily summary dataset with 21 rows.
+2026-06-08 21:35:41,357 | INFO | Starting full data quality validation process.
+2026-06-08 21:35:41,357 | INFO | Running data quality checks for locations table.
+2026-06-08 21:35:41,359 | INFO | PASS: Locations null value check.
+2026-06-08 21:35:41,360 | INFO | PASS: Locations duplicate check.
+2026-06-08 21:35:41,361 | INFO | PASS: Latitude datatype and range check.
+2026-06-08 21:35:41,362 | INFO | PASS: Longitude datatype and range check.
+2026-06-08 21:35:41,362 | INFO | Running data quality checks for weather_forecasts table.
+2026-06-08 21:35:41,362 | INFO | PASS: Weather row count check. Rows: 504
+2026-06-08 21:35:41,366 | INFO | PASS: Weather null value check.
+2026-06-08 21:35:41,367 | INFO | PASS: Weather duplicate natural key check.
+2026-06-08 21:35:41,367 | INFO | PASS: forecast_time_is_datetime.
+2026-06-08 21:35:41,367 | INFO | PASS: temperature_is_numeric.
+2026-06-08 21:35:41,367 | INFO | PASS: cloud_cover_is_numeric.
+2026-06-08 21:35:41,367 | INFO | PASS: wind_speed_is_numeric.
+2026-06-08 21:35:41,367 | INFO | PASS: wind_direction_is_numeric.
+2026-06-08 21:35:41,371 | INFO | PASS: temperature range check.
+2026-06-08 21:35:41,371 | INFO | PASS: cloud_cover range check.
+2026-06-08 21:35:41,371 | INFO | PASS: wind_speed range check.
+2026-06-08 21:35:41,371 | INFO | PASS: wind_direction range check.
+2026-06-08 21:35:41,372 | INFO | PASS: Weather to locations referential integrity check.
+2026-06-08 21:35:41,372 | INFO | Running data quality checks for renewable_scores table.
+2026-06-08 21:35:41,372 | INFO | PASS: Renewable scores row count check. Rows: 504
+2026-06-08 21:35:41,374 | INFO | PASS: Renewable scores null value check.
+2026-06-08 21:35:41,375 | INFO | PASS: Renewable scores duplicate forecast_id check.
+2026-06-08 21:35:41,376 | INFO | PASS: Solar score range check.
+2026-06-08 21:35:41,377 | INFO | PASS: Wind score range check.
+2026-06-08 21:35:41,378 | INFO | PASS: Renewable scores to weather forecasts referential integrity check.
+2026-06-08 21:35:41,378 | INFO | PASS: Weather and renewable score row counts match.
+2026-06-08 21:35:41,379 | INFO | Running data quality checks for analytics-ready dataset.
+2026-06-08 21:35:41,379 | INFO | PASS: Analytics-ready row count check. Rows: 504
+2026-06-08 21:35:41,381 | INFO | PASS: Analytics-ready null value check.
+2026-06-08 21:35:41,382 | INFO | PASS: Analytics-ready duplicate check.
+2026-06-08 21:35:41,382 | INFO | All data quality checks passed successfully.
+2026-06-08 21:35:41,409 | INFO | CSV output written: /Users/olalekanogunsola/ecocast_project/analytics_ready_outputs/locations.csv
+2026-06-08 21:35:41,410 | INFO | CSV output written: /Users/olalekanogunsola/ecocast_project/analytics_ready_outputs/weather_forecasts.csv
+2026-06-08 21:35:41,410 | INFO | CSV output written: /Users/olalekanogunsola/ecocast_project/analytics_ready_outputs/renewable_scores.csv
+2026-06-08 21:35:41,410 | INFO | CSV output written: /Users/olalekanogunsola/ecocast_project/analytics_ready_outputs/ecocast_analytics_ready.csv
+2026-06-08 21:35:41,410 | INFO | CSV output written: /Users/olalekanogunsola/ecocast_project/analytics_ready_outputs/ecocast_daily_summary.csv
+2026-06-08 21:35:41,410 | WARNING | DATABASE_URL environment variable is not set. Skipping PostgreSQL load and using CSV outputs only.
+2026-06-08 21:35:41,410 | WARNING | Incremental loading is still demonstrated in the code through natural keys and duplicate-prevention logic.
+2026-06-08 21:35:41,410 | INFO | ================================================================================
+2026-06-08 21:35:41,410 | INFO | EcoCast Week 3 ETL Pipeline completed successfully.
+2026-06-08 21:35:41,410 | INFO | End time UTC: 2026-06-09 01:35:41.410650+00:00
+2026-06-08 21:35:41,411 | INFO | Total duration: 0:00:01.842873
+2026-06-08 21:35:41,411 | INFO | Output folder: /Users/olalekanogunsola/ecocast_project/analytics_ready_outputs
+2026-06-08 21:35:41,411 | INFO | Log file: /Users/olalekanogunsola/ecocast_project/logs/ecocast_etl.log
+2026-06-08 21:35:41,411 | INFO | ================================================================================
+2026-06-08 21:41:29,479 | INFO | ================================================================================
+2026-06-08 21:41:29,480 | INFO | EcoCast Week 3 ETL Pipeline started.
+2026-06-08 21:41:29,480 | INFO | Start time UTC: 2026-06-09 01:41:29.479668+00:00
+2026-06-08 21:41:29,480 | INFO | Base directory: /Users/olalekanogunsola/ecocast_project
+2026-06-08 21:41:29,480 | INFO | ================================================================================
+2026-06-08 21:41:29,481 | INFO | Extracting forecast for Louisville. Attempt 1 of 3.
+2026-06-08 21:41:30,044 | INFO | Successfully extracted forecast for Louisville.
+2026-06-08 21:41:30,048 | INFO | Extracting forecast for Lexington. Attempt 1 of 3.
+2026-06-08 21:41:30,592 | INFO | Successfully extracted forecast for Lexington.
+2026-06-08 21:41:30,597 | INFO | Extracting forecast for Indianapolis. Attempt 1 of 3.
+2026-06-08 21:41:31,140 | INFO | Successfully extracted forecast for Indianapolis.
+2026-06-08 21:41:31,158 | INFO | Transformed locations table with 3 rows.
+2026-06-08 21:41:31,178 | INFO | Dropped 0 rows with missing required forecast values.
+2026-06-08 21:41:31,182 | INFO | Dropped 0 rows outside valid weather ranges.
+2026-06-08 21:41:31,184 | INFO | Removed 0 duplicate forecast rows.
+2026-06-08 21:41:31,188 | INFO | Transformed weather_forecasts table with 504 rows.
+2026-06-08 21:41:31,208 | INFO | Created renewable_scores table with 504 rows.
+2026-06-08 21:41:31,226 | INFO | Created analytics-ready dataset with 504 rows.
+2026-06-08 21:41:31,250 | INFO | Created daily summary dataset with 21 rows.
+2026-06-08 21:41:31,250 | INFO | Starting full data quality validation process.
+2026-06-08 21:41:31,251 | INFO | Running data quality checks for locations table.
+2026-06-08 21:41:31,253 | INFO | PASS: Locations null value check.
+2026-06-08 21:41:31,253 | INFO | PASS: Locations duplicate check.
+2026-06-08 21:41:31,254 | INFO | PASS: Latitude datatype and range check.
+2026-06-08 21:41:31,255 | INFO | PASS: Longitude datatype and range check.
+2026-06-08 21:41:31,255 | INFO | Running data quality checks for weather_forecasts table.
+2026-06-08 21:41:31,255 | INFO | PASS: Weather row count check. Rows: 504
+2026-06-08 21:41:31,258 | INFO | PASS: Weather null value check.
+2026-06-08 21:41:31,260 | INFO | PASS: Weather duplicate natural key check.
+2026-06-08 21:41:31,260 | INFO | PASS: forecast_time_is_datetime.
+2026-06-08 21:41:31,261 | INFO | PASS: temperature_is_numeric.
+2026-06-08 21:41:31,261 | INFO | PASS: cloud_cover_is_numeric.
+2026-06-08 21:41:31,263 | INFO | PASS: wind_speed_is_numeric.
+2026-06-08 21:41:31,263 | INFO | PASS: wind_direction_is_numeric.
+2026-06-08 21:41:31,265 | INFO | PASS: temperature range check.
+2026-06-08 21:41:31,265 | INFO | PASS: cloud_cover range check.
+2026-06-08 21:41:31,265 | INFO | PASS: wind_speed range check.
+2026-06-08 21:41:31,265 | INFO | PASS: wind_direction range check.
+2026-06-08 21:41:31,266 | INFO | PASS: Weather to locations referential integrity check.
+2026-06-08 21:41:31,266 | INFO | Running data quality checks for renewable_scores table.
+2026-06-08 21:41:31,266 | INFO | PASS: Renewable scores row count check. Rows: 504
+2026-06-08 21:41:31,268 | INFO | PASS: Renewable scores null value check.
+2026-06-08 21:41:31,269 | INFO | PASS: Renewable scores duplicate forecast_id check.
+2026-06-08 21:41:31,270 | INFO | PASS: Solar score range check.
+2026-06-08 21:41:31,271 | INFO | PASS: Wind score range check.
+2026-06-08 21:41:31,272 | INFO | PASS: Renewable scores to weather forecasts referential integrity check.
+2026-06-08 21:41:31,272 | INFO | PASS: Weather and renewable score row counts match.
+2026-06-08 21:41:31,272 | INFO | Running data quality checks for analytics-ready dataset.
+2026-06-08 21:41:31,272 | INFO | PASS: Analytics-ready row count check. Rows: 504
+2026-06-08 21:41:31,276 | INFO | PASS: Analytics-ready null value check.
+2026-06-08 21:41:31,280 | INFO | PASS: Analytics-ready duplicate check.
+2026-06-08 21:41:31,280 | INFO | All data quality checks passed successfully.
+2026-06-08 21:41:31,312 | INFO | CSV output written: /Users/olalekanogunsola/ecocast_project/analytics_ready_outputs/locations.csv
+2026-06-08 21:41:31,312 | INFO | CSV output written: /Users/olalekanogunsola/ecocast_project/analytics_ready_outputs/weather_forecasts.csv
+2026-06-08 21:41:31,312 | INFO | CSV output written: /Users/olalekanogunsola/ecocast_project/analytics_ready_outputs/renewable_scores.csv
+2026-06-08 21:41:31,312 | INFO | CSV output written: /Users/olalekanogunsola/ecocast_project/analytics_ready_outputs/ecocast_analytics_ready.csv
+2026-06-08 21:41:31,312 | INFO | CSV output written: /Users/olalekanogunsola/ecocast_project/analytics_ready_outputs/ecocast_daily_summary.csv
+2026-06-08 21:41:31,312 | INFO | Connecting to PostgreSQL database.
+2026-06-08 21:41:37,772 | ERROR | Database loading failed: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-06-08 21:41:37,773 | ERROR | ETL pipeline failed: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+  File "/Users/olalekanogunsola/ecocast_project/venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py", line 144, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/olalekanogunsola/ecocast_project/venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py", line 3319, in raw_connection
+    return self.pool.connect()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/Users/olalekanogunsola/ecocast_project/venv/lib/python3.13/site-packages/sqlalchemy/pool/base.py", line 448, in connect
+    return _ConnectionFairy._checkout(self)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/olalekanogunsola/ecocast_project/venv/lib/python3.13/site-packages/sqlalchemy/pool/base.py", line 1272, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/Users/olalekanogunsola/ecocast_project/venv/lib/python3.13/site-packages/sqlalchemy/pool/base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "/Users/olalekanogunsola/ecocast_project/venv/lib/python3.13/site-packages/sqlalchemy/pool/impl.py", line 178, in _do_get
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "/Users/olalekanogunsola/ecocast_project/venv/lib/python3.13/site-packages/sqlalchemy/util/langhelpers.py", line 122, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/Users/olalekanogunsola/ecocast_project/venv/lib/python3.13/site-packages/sqlalchemy/pool/impl.py", line 176, in _do_get
+    return self._create_connection()
+           ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/olalekanogunsola/ecocast_project/venv/lib/python3.13/site-packages/sqlalchemy/pool/base.py", line 389, in _create_connection
+    return _ConnectionRecord(self)
+  File "/Users/olalekanogunsola/ecocast_project/venv/lib/python3.13/site-packages/sqlalchemy/pool/base.py", line 674, in __init__
+    self.__connect()
+    ~~~~~~~~~~~~~~^^
+  File "/Users/olalekanogunsola/ecocast_project/venv/lib/python3.13/site-packages/sqlalchemy/pool/base.py", line 900, in __connect
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "/Users/olalekanogunsola/ecocast_project/venv/lib/python3.13/site-packages/sqlalchemy/util/langhelpers.py", line 122, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/Users/olalekanogunsola/ecocast_project/venv/lib/python3.13/site-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/olalekanogunsola/ecocast_project/venv/lib/python3.13/site-packages/sqlalchemy/engine/create.py", line 667, in connect
+    return dialect.connect(*cargs_tup, **cparams)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/olalekanogunsola/ecocast_project/venv/lib/python3.13/site-packages/sqlalchemy/engine/default.py", line 630, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Users/olalekanogunsola/ecocast_project/venv/lib/python3.13/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/olalekanogunsola/ecocast_project/ecocast_etl.py", line 1201, in run_etl_pipeline
+    load_to_postgresql(locations_df, weather_df, scores_df)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/olalekanogunsola/ecocast_project/ecocast_etl.py", line 1049, in load_to_postgresql
+    create_database_tables(engine)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/Users/olalekanogunsola/ecocast_project/ecocast_etl.py", line 1010, in create_database_tables
+    with engine.begin() as connection:
+         ~~~~~~~~~~~~^^
+  File "/Users/anaconda3/lib/python3.13/contextlib.py", line 141, in __enter__
+    return next(self.gen)
+  File "/Users/olalekanogunsola/ecocast_project/venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py", line 3259, in begin
+    with self.connect() as conn:
+         ~~~~~~~~~~~~^^
+  File "/Users/olalekanogunsola/ecocast_project/venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py", line 3295, in connect
+    return self._connection_cls(self)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/olalekanogunsola/ecocast_project/venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        err, dialect, engine
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/olalekanogunsola/ecocast_project/venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py", line 2450, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/olalekanogunsola/ecocast_project/venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py", line 144, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/olalekanogunsola/ecocast_project/venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py", line 3319, in raw_connection
+    return self.pool.connect()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/Users/olalekanogunsola/ecocast_project/venv/lib/python3.13/site-packages/sqlalchemy/pool/base.py", line 448, in connect
+    return _ConnectionFairy._checkout(self)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/olalekanogunsola/ecocast_project/venv/lib/python3.13/site-packages/sqlalchemy/pool/base.py", line 1272, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/Users/olalekanogunsola/ecocast_project/venv/lib/python3.13/site-packages/sqlalchemy/pool/base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "/Users/olalekanogunsola/ecocast_project/venv/lib/python3.13/site-packages/sqlalchemy/pool/impl.py", line 178, in _do_get
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "/Users/olalekanogunsola/ecocast_project/venv/lib/python3.13/site-packages/sqlalchemy/util/langhelpers.py", line 122, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/Users/olalekanogunsola/ecocast_project/venv/lib/python3.13/site-packages/sqlalchemy/pool/impl.py", line 176, in _do_get
+    return self._create_connection()
+           ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/olalekanogunsola/ecocast_project/venv/lib/python3.13/site-packages/sqlalchemy/pool/base.py", line 389, in _create_connection
+    return _ConnectionRecord(self)
+  File "/Users/olalekanogunsola/ecocast_project/venv/lib/python3.13/site-packages/sqlalchemy/pool/base.py", line 674, in __init__
+    self.__connect()
+    ~~~~~~~~~~~~~~^^
+  File "/Users/olalekanogunsola/ecocast_project/venv/lib/python3.13/site-packages/sqlalchemy/pool/base.py", line 900, in __connect
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "/Users/olalekanogunsola/ecocast_project/venv/lib/python3.13/site-packages/sqlalchemy/util/langhelpers.py", line 122, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/Users/olalekanogunsola/ecocast_project/venv/lib/python3.13/site-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/olalekanogunsola/ecocast_project/venv/lib/python3.13/site-packages/sqlalchemy/engine/create.py", line 667, in connect
+    return dialect.connect(*cargs_tup, **cparams)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/olalekanogunsola/ecocast_project/venv/lib/python3.13/site-packages/sqlalchemy/engine/default.py", line 630, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Users/olalekanogunsola/ecocast_project/venv/lib/python3.13/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-06-08 21:51:39,159 | INFO | ================================================================================
+2026-06-08 21:51:39,159 | INFO | EcoCast Week 3 ETL Pipeline started.
+2026-06-08 21:51:39,159 | INFO | Start time UTC: 2026-06-09 01:51:39.159040+00:00
+2026-06-08 21:51:39,159 | INFO | Base directory: /Users/olalekanogunsola/ecocast_project
+2026-06-08 21:51:39,159 | INFO | ================================================================================
+2026-06-08 21:51:39,159 | INFO | Extracting forecast for Louisville. Attempt 1 of 3.
+2026-06-08 21:51:39,734 | INFO | Successfully extracted forecast for Louisville.
+2026-06-08 21:51:39,737 | INFO | Extracting forecast for Lexington. Attempt 1 of 3.
+2026-06-08 21:51:40,278 | INFO | Successfully extracted forecast for Lexington.
+2026-06-08 21:51:40,280 | INFO | Extracting forecast for Indianapolis. Attempt 1 of 3.
+2026-06-08 21:51:40,818 | INFO | Successfully extracted forecast for Indianapolis.
+2026-06-08 21:51:40,828 | INFO | Transformed locations table with 3 rows.
+2026-06-08 21:51:40,842 | INFO | Dropped 0 rows with missing required forecast values.
+2026-06-08 21:51:40,844 | INFO | Dropped 0 rows outside valid weather ranges.
+2026-06-08 21:51:40,846 | INFO | Removed 0 duplicate forecast rows.
+2026-06-08 21:51:40,851 | INFO | Transformed weather_forecasts table with 504 rows.
+2026-06-08 21:51:40,859 | INFO | Created renewable_scores table with 504 rows.
+2026-06-08 21:51:40,870 | INFO | Created analytics-ready dataset with 504 rows.
+2026-06-08 21:51:40,886 | INFO | Created daily summary dataset with 21 rows.
+2026-06-08 21:51:40,886 | INFO | Starting full data quality validation process.
+2026-06-08 21:51:40,886 | INFO | Running data quality checks for locations table.
+2026-06-08 21:51:40,887 | INFO | PASS: Locations null value check.
+2026-06-08 21:51:40,887 | INFO | PASS: Locations duplicate check.
+2026-06-08 21:51:40,888 | INFO | PASS: Latitude datatype and range check.
+2026-06-08 21:51:40,888 | INFO | PASS: Longitude datatype and range check.
+2026-06-08 21:51:40,888 | INFO | Running data quality checks for weather_forecasts table.
+2026-06-08 21:51:40,888 | INFO | PASS: Weather row count check. Rows: 504
+2026-06-08 21:51:40,889 | INFO | PASS: Weather null value check.
+2026-06-08 21:51:40,889 | INFO | PASS: Weather duplicate natural key check.
+2026-06-08 21:51:40,889 | INFO | PASS: forecast_time_is_datetime.
+2026-06-08 21:51:40,890 | INFO | PASS: temperature_is_numeric.
+2026-06-08 21:51:40,890 | INFO | PASS: cloud_cover_is_numeric.
+2026-06-08 21:51:40,890 | INFO | PASS: wind_speed_is_numeric.
+2026-06-08 21:51:40,890 | INFO | PASS: wind_direction_is_numeric.
+2026-06-08 21:51:40,891 | INFO | PASS: temperature range check.
+2026-06-08 21:51:40,891 | INFO | PASS: cloud_cover range check.
+2026-06-08 21:51:40,891 | INFO | PASS: wind_speed range check.
+2026-06-08 21:51:40,891 | INFO | PASS: wind_direction range check.
+2026-06-08 21:51:40,891 | INFO | PASS: Weather to locations referential integrity check.
+2026-06-08 21:51:40,891 | INFO | Running data quality checks for renewable_scores table.
+2026-06-08 21:51:40,891 | INFO | PASS: Renewable scores row count check. Rows: 504
+2026-06-08 21:51:40,892 | INFO | PASS: Renewable scores null value check.
+2026-06-08 21:51:40,893 | INFO | PASS: Renewable scores duplicate forecast_id check.
+2026-06-08 21:51:40,893 | INFO | PASS: Solar score range check.
+2026-06-08 21:51:40,894 | INFO | PASS: Wind score range check.
+2026-06-08 21:51:40,894 | INFO | PASS: Renewable scores to weather forecasts referential integrity check.
+2026-06-08 21:51:40,894 | INFO | PASS: Weather and renewable score row counts match.
+2026-06-08 21:51:40,895 | INFO | Running data quality checks for analytics-ready dataset.
+2026-06-08 21:51:40,895 | INFO | PASS: Analytics-ready row count check. Rows: 504
+2026-06-08 21:51:40,896 | INFO | PASS: Analytics-ready null value check.
+2026-06-08 21:51:40,898 | INFO | PASS: Analytics-ready duplicate check.
+2026-06-08 21:51:40,898 | INFO | All data quality checks passed successfully.
+2026-06-08 21:51:40,914 | INFO | CSV output written: /Users/olalekanogunsola/ecocast_project/analytics_ready_outputs/locations.csv
+2026-06-08 21:51:40,914 | INFO | CSV output written: /Users/olalekanogunsola/ecocast_project/analytics_ready_outputs/weather_forecasts.csv
+2026-06-08 21:51:40,915 | INFO | CSV output written: /Users/olalekanogunsola/ecocast_project/analytics_ready_outputs/renewable_scores.csv
+2026-06-08 21:51:40,915 | INFO | CSV output written: /Users/olalekanogunsola/ecocast_project/analytics_ready_outputs/ecocast_analytics_ready.csv
+2026-06-08 21:51:40,915 | INFO | CSV output written: /Users/olalekanogunsola/ecocast_project/analytics_ready_outputs/ecocast_daily_summary.csv
+2026-06-08 21:51:40,915 | INFO | Connecting to PostgreSQL database.
+2026-06-08 21:51:41,110 | INFO | Database tables created or confirmed successfully.
+2026-06-08 21:51:41,134 | INFO | No existing location keys found. Loading all location rows.
+2026-06-08 21:51:41,138 | INFO | No existing forecast keys found. Loading all forecast rows.
+2026-06-08 21:51:41,140 | INFO | Incremental renewable score load: 504 new rows out of 504 total rows.
+2026-06-08 21:51:41,149 | INFO | Loaded 3 new rows into locations.
+2026-06-08 21:51:41,235 | INFO | Loaded 504 new rows into weather_forecasts.
+2026-06-08 21:51:41,305 | INFO | Loaded 504 new rows into renewable_scores.
+2026-06-08 21:51:41,305 | INFO | PostgreSQL loading process completed successfully.
+2026-06-08 21:51:41,305 | INFO | ================================================================================
+2026-06-08 21:51:41,305 | INFO | EcoCast Week 3 ETL Pipeline completed successfully.
+2026-06-08 21:51:41,305 | INFO | End time UTC: 2026-06-09 01:51:41.305788+00:00
+2026-06-08 21:51:41,306 | INFO | Total duration: 0:00:02.146748
+2026-06-08 21:51:41,306 | INFO | Output folder: /Users/olalekanogunsola/ecocast_project/analytics_ready_outputs
+2026-06-08 21:51:41,306 | INFO | Log file: /Users/olalekanogunsola/ecocast_project/logs/ecocast_etl.log
+2026-06-08 21:51:41,306 | INFO | ================================================================================

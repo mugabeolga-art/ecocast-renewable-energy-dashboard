@@ -1,0 +1,4 @@
+location_id,location_key,city_name,latitude,longitude,timezone
+1,louisville_38.2527_-85.7585,Louisville,38.2527,-85.7585,America/New_York
+2,lexington_38.0406_-84.5037,Lexington,38.0406,-84.5037,America/New_York
+3,indianapolis_39.7684_-86.1581,Indianapolis,39.7684,-86.1581,America/Indiana/Indianapolis
