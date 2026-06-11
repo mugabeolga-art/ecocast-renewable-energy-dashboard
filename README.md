@@ -254,16 +254,17 @@ http://127.0.0.1:8051
 ## Dashboard Screenshots
 
 ### Dashboard Home
+<img width="468" height="253" alt="image" src="https://github.com/user-attachments/assets/c840bb56-aed2-4b87-9588-7fa8417c0d32" />
 
-Insert screenshot here.
 
 ### City Filter Example
 
-Insert screenshot here.
+<img width="468" height="254" alt="image" src="https://github.com/user-attachments/assets/a404bae2-2a43-4e24-a420-f7adc3806e89" />
+
 
 ### Renewable Energy Analysis
 
-Insert screenshot here.
+
 
 ---
 
